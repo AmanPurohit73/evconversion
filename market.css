@@ -434,7 +434,7 @@ textarea {
   }
   
   .card {
-    width: 250px;
+    width:50%;
     margin: 1.25rem;
     padding: 2.5rem;
     border-radius: 1rem;
@@ -486,3 +486,7 @@ textarea {
   .buy {
     color:var(--text-dark);
   }
+  a {
+    all: unset;
+    display: contents;
+}

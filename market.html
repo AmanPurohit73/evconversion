@@ -19,7 +19,7 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#" class="active">EV Conversion</a></li>
             <li><a href="#">Buy And Sell</a></li>
             <li><a href="#">Scrappage Network</a></li>
@@ -34,15 +34,21 @@
 
   <div class="container">
     <!-- Car Parts Card -->
-    <div class="card green-card" onclick="handleCardClick('vehicles')">
-      <img src="assets/car.png" alt="Car Parts" class="card-image" />
-      <div class="card-text">
-        <h1 class="card-title buy">Buy/Sell Vehicles</h1>
-        <p class="card-desc">Explore best vehicles of all models and brands.</p>
-      </div>
-    </div>
+   <a href="">
 
+     
+     <div class="card green-card" onclick="handleCardClick('vehicles')">
+       <img src="assets/car.png" alt="Car Parts" class="card-image" />
+       <div class="card-text">
+         <h1 class="card-title buy">Buy/Sell Vehicles</h1>
+         <p class="card-desc">Explore best vehicles of all models and brands.</p>
+        </div>
+      </div>
+      
+    </a>
     <!-- Vehicle Accessories Card -->
+
+    <a href="./accessories/index.html">
     <div class="card dark-card" onclick="handleCardClick('accessories')">
       <img src="assets/parts.png" alt="Vehicle Accessories" class="card-image" />
       <div class="card-text">
@@ -51,15 +57,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    function handleCardClick(type) {
-  if (type === 'vehicles') {
-    alert('Navigating to Vehicles section...');
-  } else if (type === 'accessories') {
-    alert('Navigating to Accessories section...');
-  }
-}
-  </script>
+</a>
 </body>
 </html>
