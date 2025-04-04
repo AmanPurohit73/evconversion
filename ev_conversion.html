@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Conversion - Revive Wheels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./ev.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="/api/placeholder/50/50" alt="Logo">
+                <h1 class="brand-name">Revive Wheels</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">EV Conversion</a></li>
+                <li><a href="#">Buy And Sell</a></li>
+                <li><a href="#">Scrappage Network</a></li>
+            </ul>
+            
+            <div class="auth-buttons">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">SignUp</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Convert Your Car to Electric</h1>
+        <p>Breathe new life into your existing vehicle with our professional EV conversion services. Save money, reduce emissions, and enjoy modern EV benefits.</p>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search for conversion services...">
+            <button type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <div class="form-container">
+        <form action="evconfirmation.html">
+            <div class="form-content">
+                <div class="user-details">
+                    <h1>Owner Details</h1>
+                    <label for="username">Name</label>
+                    <input id="username" type="text" placeholder="Enter Name">
+                    
+                    <label for="userphone">Phone Number</label>
+                    <input id="userphone" type="tel" placeholder="Enter Phone Number">
+                    
+                    <label for="userEmail">Email Address</label>
+                    <input id="userEmail" type="email" placeholder="Enter Email Address">
+
+                    <label for="userEmail">Aadhar Number</label>
+                    <input id="userEmail" type="email" placeholder="Enter Aadhar Number">
+                </div>
+
+                <div class="video-section">
+                    <img src="https://img.freepik.com/free-vector/electric-car-concept-illustration_114360-1161.jpg" alt="EV Conversion Illustration">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>Vehicle Details</h1>
+                <label for="vehicleNo">Vehicle No.</label>
+                <input id="vehicleNo" type="text" placeholder="Enter Vehicle No.">
+
+                <label for="vehicleRC">Vehicle RC</label>
+                <input id="vehicleRC" type="file">
+
+                <label for="vehicleModel">Vehicle Model</label>
+                <input id="vehicleModel" type="text" placeholder="Enter Vehicle Model">
+
+                <label for="vehicleYear">Manufacturing Year</label>
+                <input id="vehicleYear" type="number" placeholder="Enter Manufacturing Year">
+
+                <label for="vehiclePhotos">Vehicle Photos</label>
+                <input id="vehiclePhotos" type="file" multiple>
+            </div>
+
+            <div class="form-section">
+                <h1>Conversion Requirements</h1>
+                
+                <label for="conversionType">Conversion Type</label>
+                <select id="conversionType">
+                    <option value="">Select Conversion Type</option>
+                    <option value="full">Full EV Conversion</option>
+                    <option value="hybrid">Hybrid Conversion</option>
+                    <option value="partial">Partial EV Conversion</option>
+                </select>
+
+                <label for="batteryRange">Desired Battery Range (km)</label>
+                <input id="batteryRange" type="range" min="100" max="500" step="50" value="250">
+                <div id="rangeValue">250 km</div>
+
+                <label for="conversionBudget">Estimated Budget (₹)</label>
+                <input id="conversionBudget" type="number" placeholder="Enter your budget">
+
+                <label for="additionalRequirements">Additional Requirements</label>
+                <textarea id="additionalRequirements" placeholder="Enter any specific requirements or questions"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="process-container">
+            <div class="process-header">
+                <h2 class="process-title">Our EV Conversion Process</h2>
+                <p class="process-description">Converting your conventional vehicle to electric is simpler than you think. Our certified technicians follow a meticulous process to ensure safety, performance, and reliability.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step-item">
+                    <span class="step-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="step-text">Comprehensive vehicle assessment</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="step-text">Customized conversion plan</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="step-text">High-quality components installation</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="step-text">Rigorous testing and certification</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="step-text">Complete documentation support</span>
+                </div>
+            </div>
+            
+            <a href="#" class="view-packages-btn">
+                <i class="fas fa-bolt"></i> View Conversion Packages
+            </a>
+            
+        </div>
+    </section>
+
+    <script src="./ev.js"></script>
+</body>
+</html>
