@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Market Cards</title>
+  <link rel="stylesheet" href="market.css" />
+  
+</head>
+<body>
+
+
+ <!-- Header/Navigation -->
+ <header>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/public/images/WhatsApp Image 2025-04-04 at 15.10.56_a4140f4e.jpg" alt="Logo">
+            <h1 class="brand-name">Revive Wheels</h1>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">EV Conversion</a></li>
+            <li><a href="#">Buy And Sell</a></li>
+            <li><a href="#">Scrappage Network</a></li>
+        </ul>
+        
+        <div class="auth-buttons">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="signup-btn">SignUp</a>
+        </div>
+    </nav>
+</header>
+
+  <div class="container">
+    <!-- Car Parts Card -->
+    <div class="card green-card" onclick="handleCardClick('vehicles')">
+      <img src="assets/car.png" alt="Car Parts" class="card-image" />
+      <div class="card-text">
+        <h1 class="card-title buy">Buy/Sell Vehicles</h1>
+        <p class="card-desc">Explore best vehicles of all models and brands.</p>
+      </div>
+    </div>
+
+    <!-- Vehicle Accessories Card -->
+    <div class="card dark-card" onclick="handleCardClick('accessories')">
+      <img src="assets/parts.png" alt="Vehicle Accessories" class="card-image" />
+      <div class="card-text">
+        <h1 class="card-title">Buy/Sell Vehicle Accessories</h1>
+        <p class="card-desc">Find best accessories to enhance your vehicle’s performance.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function handleCardClick(type) {
+  if (type === 'vehicles') {
+    alert('Navigating to Vehicles section...');
+  } else if (type === 'accessories') {
+    alert('Navigating to Accessories section...');
+  }
+}
+  </script>
+</body>
+</html>
