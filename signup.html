@@ -32,9 +32,7 @@
                 <h1 class="form-title">Create Your Account</h1>
                 <p class="form-subtitle">Join Revive Wheels and get access to exclusive offers</p>
             </div>
-            <div class="success-message" id="successMessage">
-                Account created successfully! Welcome to Revive Wheels.
-            </div>
+            <div class="success-message" id="successMessage"></div>
             <form id="signupForm">
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
@@ -66,14 +64,18 @@
             </form>
             
             <div class="form-footer">
-                Already have an account? <a href="#">Log in here</a>
+                Already have an account? <a href="signin.html">Log in here</a>
             </div>
         </div>
     </div>
 
-    <script src="signup.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    
 
     
+    <!-- Form Handling -->
+    <script src="signup.js"></script>
 </body>
 </html>
-
