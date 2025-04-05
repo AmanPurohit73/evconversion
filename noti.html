@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission Confirmed | Revive Wheels</title>
+    <style>
+      :root {
+        --primary-green: #2ecc71;
+        --dark-green: #27ae60;
+        --light-green: #a3e4bc;
+        --very-light-green: #eafaf1;
+        --accent-dark: #2c3e50;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .confirmation-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .card-header {
+        background-color: var(--primary-green);
+        padding: 25px 30px;
+        text-align: center;
+        position: relative;
+      }
+
+      .logo {
+        width: 180px;
+        margin-bottom: 15px;
+      }
+
+      .card-header h1 {
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .card-header p {
+        color: white;
+        opacity: 0.9;
+        font-size: 16px;
+      }
+
+      .card-body {
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--very-light-green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+      }
+
+      .success-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--primary-green);
+      }
+
+      .card-body h2 {
+        color: var(--accent-dark);
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .card-body p {
+        color: #555;
+        font-size: 17px;
+        margin-bottom: 25px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .details-box {
+        background-color: var(--very-light-green);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .details-box h3 {
+        color: var(--dark-green);
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .detail-item {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .detail-label {
+        font-weight: 500;
+        width: 150px;
+        color: var(--accent-dark);
+      }
+
+      .detail-value {
+        color: #333;
+        flex: 1;
+      }
+
+      .button {
+        display: inline-block;
+        background-color: var(--primary-green);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+      }
+
+      .button:hover {
+        background-color: var(--dark-green);
+        transform: translateY(-2px);
+        box-shadow: 0 7px 15px rgba(46, 204, 113, 0.4);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #777;
+        font-size: 14px;
+      }
+
+      .footer a {
+        color: var(--dark-green);
+        text-decoration: none;
+      }
+
+      .leaf-decoration {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .leaf-top-right {
+        top: -50px;
+        right: -50px;
+        transform: rotate(45deg);
+        width: 150px;
+      }
+
+      .leaf-bottom-left {
+        bottom: -70px;
+        left: -70px;
+        transform: rotate(135deg);
+        width: 180px;
+      }
+
+      .card-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .card-header {
+          padding: 20px;
+        }
+
+        .card-body {
+          padding: 30px 20px;
+        }
+
+        .detail-item {
+          flex-direction: column;
+          margin-bottom: 15px;
+        }
+
+        .detail-label {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="confirmation-card">
+        <div class="card-header">
+          <svg
+            class="leaf-decoration leaf-top-right"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,18.5h4A7.5,7.5,0,0,0,19.5,11V8H17Z"
+              fill="white"
+            ></path>
+          </svg>
+
+          <div class="card-content">
+            <svg
+              class="logo"
+              viewBox="0 0 200 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 25C15 18.373 20.373 13 27 13H37C43.627 13 49 18.373 49 25C49 31.627 43.627 37 37 37H27C20.373 37 15 31.627 15 25Z"
+                fill="white"
+              />
+              <path
+                d="M27 17L37 33"
+                stroke="#27ae60"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M27 33L37 17"
+                stroke="#27ae60"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M55 15H60.2656L65.6094 29.625H65.7656L71.1094 15H76.375V35H72.2344V20.1875H72.1094L66.9844 34.9219H64.3906L59.2656 20.1094H59.1406V35H55V15Z"
+                fill="white"
+              />
+              <path
+                d="M87.7656 35.2344C85.8281 35.2344 84.2812 34.7031 83.125 33.6406C81.9792 32.5677 81.4062 31.0417 81.4062 29.0625V15H85.7031V28.7031C85.7031 29.6719 85.9427 30.4062 86.4219 30.9062C86.901 31.3958 87.5677 31.6406 88.4219 31.6406C89.276 31.6406 89.9427 31.3958 90.4219 30.9062C90.901 30.4062 91.1406 29.6719 91.1406 28.7031V15H95.4375V29.0625C95.4375 31.0417 94.8646 32.5677 93.7188 33.6406C92.5729 34.7031 91.026 35.2344 89.0781 35.2344H87.7656Z"
+                fill="white"
+              />
+              <path d="M109.016 15H113.312V35H109.016V15Z" fill="white" />
+              <path
+                d="M126.25 15H130.547V31.4062H139.453V35H126.25V15Z"
+                fill="white"
+              />
+              <path d="M151.016 15H155.312V35H151.016V15Z" fill="white" />
+              <path
+                d="M167.5 35V15H179.141V18.5938H171.797V23.1875H178.672V26.7812H171.797V31.4062H179.297V35H167.5Z"
+                fill="white"
+              />
+            </svg>
+            <h1>EV Conversion Request Submitted</h1>
+            <p>Your journey to sustainable driving has begun.</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"
+              />
+            </svg>
+          </div>
+
+          <h2>Thank You for Choosing Revive Wheels!</h2>
+          <p>
+            Your EV conversion application has been successfully submitted. Our
+            technical team will review your request and get back to you within
+            the next 48 hours.
+          </p>
+
+          <div class="details-box">
+            <h3>Request Details</h3>
+            <div class="detail-item">
+              <div class="detail-label">Reference Number:</div>
+              <div class="detail-value">RW-EV-25041</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Submission Date:</div>
+              <div class="detail-value">April 5, 2025</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Response Expected:</div>
+              <div class="detail-value">Within 48 hours</div>
+            </div>
+          </div>
+
+          <p>
+            We'll contact you soon with the next steps of your vehicle's journey
+            towards becoming eco-friendly. Feel free to contact us if you have
+            any questions.
+          </p>
+
+          <a href="#" class="button">Track Your Application</a>
+        </div>
+
+        <svg
+          class="leaf-decoration leaf-bottom-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,18.5h4A7.5,7.5,0,0,0,19.5,11V8H17Z"
+            fill="white"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer">
+        <p>
+          &copy; 2025 Revive Wheels. All rights reserved. |
+          <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // revive-wheels-confirmation.js
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set company name in the header
+        updateCompanyName();
+
+        // Generate random reference number
+        generateReferenceNumber();
+
+        // Set current date
+        setCurrentDate();
+
+        // Initialize track button functionality
+        initializeTrackButton();
+      });
+
+      /**
+       * Update company name to ensure it's "Revive Wheels"
+       */
+      function updateCompanyName() {
+        // This assumes there's an SVG logo with the company name
+        // If you need to update a text element instead, uncomment this code:
+        // const companyNameElement = document.querySelector('.company-name');
+        // if (companyNameElement) {
+        //     companyNameElement.textContent = 'Revive Wheels';
+        // }
+
+        // Update page title
+        document.title = "Form Submission Confirmed | Revive Wheels";
+      }
+
+      /**
+       * Generate a random reference number with Revive Wheels prefix
+       */
+      function generateReferenceNumber() {
+        const referenceElement = document.querySelector(".detail-value");
+        if (referenceElement) {
+          // Generate a random 5-digit number
+          const randomDigits = Math.floor(10000 + Math.random() * 90000);
+          // Format with Revive Wheels prefix: RW-EV-[random digits]
+          const referenceNumber = `RW-EV-${randomDigits}`;
+          referenceElement.textContent = referenceNumber;
+        }
+      }
+
+      /**
+       * Set the current date as the submission date
+       */
+      function setCurrentDate() {
+        const dateElement = document.querySelectorAll(".detail-value")[1];
+        if (dateElement) {
+          const now = new Date();
+
+          // Format date as Month Day, Year (e.g., April 5, 2025)
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const formattedDate = now.toLocaleDateString("en-US", options);
+
+          dateElement.textContent = formattedDate;
+        }
+      }
+
+      /**
+       * Initialize the track button functionality
+       */
+      function initializeTrackButton() {
+        const trackButton = document.querySelector(".button");
+        if (trackButton) {
+          trackButton.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Get the reference number for tracking
+            const referenceNumber =
+              document.querySelector(".detail-value").textContent;
+
+            // You can add code here to redirect to a tracking page
+            // or open a tracking modal with the reference number
+            alert(
+              `Tracking request for application ${referenceNumber}. This functionality will be implemented in the full version.`
+            );
+
+            // For a real implementation, you might do something like:
+            // window.location.href = `/track-application?ref=${referenceNumber}`;
+          });
+        }
+      }
+
+      /**
+       * Calculate the expected response date (48 hours from submission)
+       * This is an optional function to add if you want to show the exact date/time
+       * when the user can expect a response
+       */
+      function calculateExpectedResponse() {
+        const responseElement = document.querySelectorAll(".detail-value")[2];
+        if (responseElement) {
+          const now = new Date();
+          const responseTime = new Date(now.getTime() + 48 * 60 * 60 * 1000); // 48 hours in milliseconds
+
+          const options = {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          };
+
+          const formattedResponseDate = responseTime.toLocaleDateString(
+            "en-US",
+            options
+          );
+          responseElement.textContent = formattedResponseDate;
+        }
+      }
+
+      /**
+       * Save the submission details to localStorage (optional)
+       * This can be useful if you want to persist the submission data
+       */
+      function saveSubmissionDetails() {
+        const referenceNumber =
+          document.querySelector(".detail-value").textContent;
+        const submissionDate =
+          document.querySelectorAll(".detail-value")[1].textContent;
+
+        const submissionData = {
+          referenceNumber: referenceNumber,
+          submissionDate: submissionDate,
+          status: "pending",
+        };
+
+        localStorage.setItem(
+          "reviveWheelsSubmission",
+          JSON.stringify(submissionData)
+        );
+      }
+
+      /**
+       * Check if there is a saved submission and show a notification (optional)
+       * This could be used if the user refreshes the page
+       */
+      function checkForExistingSubmission() {
+        const savedData = localStorage.getItem("reviveWheelsSubmission");
+
+        if (savedData) {
+          const submissionData = JSON.parse(savedData);
+          console.log("Found existing submission:", submissionData);
+
+          // You could show a notification or update the UI here
+        }
+      }
+    </script>
+  </body>
+</html>
